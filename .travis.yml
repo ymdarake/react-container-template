@@ -8,3 +8,17 @@ before_install:
 
 script:
   - docker run -e CI=true ymdarake/react-container-template npm run test
+## https://docs.travis-ci.com/user/deployment/elasticbeanstalk/
+# deploy:
+#   provider: elasticbeanstalk
+#   region: 'ap-northeast-1'
+#   app: 'app-name-on-elastic-beanstalk'
+#   env: 'react-container-template-env' # last element of the breadcrumbs
+#   bucket_name: 'elasticbeanstalk-ap-northeast-1-9999999999999' # S3
+#   bucket_path: 'app-name-on-elastic-beanstalk' # differs by the env name (app name by default)
+#   on:
+#     branch: master
+#   access_key_id:
+#     secure: $AWS_ACCESS_KEY
+#   secret_access_key:
+#     secure: $AWS_SECRET_KEY
